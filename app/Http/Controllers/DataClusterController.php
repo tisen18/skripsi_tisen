@@ -246,20 +246,10 @@ class DataClusterController extends Controller
         // Calculate clusters
         $this->DataClusterPage($req, $req->get('tahun'), $req->get('id_kategori'));
 
-        // Convert hasilHitung to array if it's not already
-        $hasilHitungArray = $databencana->count();
-
-        // Combine databencana and hasilHitung
-        $combinedData = [
-            
-            'datacluster' => ($this->hasilHitung),
-            'hasilHitung' => $hasilHitungArray,
-        ];
-        dd($combinedData);
         // Pass data to the view
         return view('DataCluster.mapcluster', [
             'datakategoris' => $datakategori,
-            'dataclusters' => json_encode($combinedData),
+            'dataclusters' => json_encode($this->hasilHitung),
         ]);
     }
 

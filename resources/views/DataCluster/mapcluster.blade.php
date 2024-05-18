@@ -154,7 +154,7 @@
                 let parameter = namakategori != '' ? '<br>Parameter : ' + namakategori : '';
                 layer.bindPopup('Kelurahan  : ' + feature.properties.NAMOBJ + parameter +
                     '<br>Cluster : ' + feature.properties.dataCluster.cluster + parameter +
-                    '<br>Cluster : ' + feature.properties.dataCluster.cluster);
+                    '<br>Total Kejadian : ' + feature.properties.dataCluster.data.nilai_1);
             },
         }).addTo(map);
         /* global euCountries */
